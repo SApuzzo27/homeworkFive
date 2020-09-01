@@ -11,9 +11,9 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
 
     <!-- <font> -->
-      <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans" rel="stylesheet">  
-      <link rel="stylesheet" href="style.css" />
-  
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans" rel="stylesheet">  
+    <link rel="stylesheet" href="style.css" />
+
     <title>Work Day Scheduler</title>
 </head>
 
@@ -113,7 +113,7 @@
 <script>
 
 // vars
-
+var 
 var saveBtn = document.querySelector("#saveBtn")
 
 
@@ -123,7 +123,7 @@ $("#currentDay").text(moment().format('MMMM Do YYYY, h:mm:ss a'));  
 console.log(document)
 
 // function readFromLocalStorage ()
-    //     <!-- this is to look for anything saved previously in local storage -->
+    //    (this is to look for anything saved previously in local storage)
     //         use for loop
     //             - read value from time property
     //             - assign as text back in element (using its class (.description) and id (specific to each hour)
@@ -131,16 +131,17 @@ console.log(document)
     //                 - assign proper class (.past .present .future) based on comparison to current hour (<,>, === or <=, >=, ===)
 
     //     function writeToLocalStorage () {
-    //     <!-- this is to save a value from the text area to local storage, using the hour as the key when save button is clicked -->
- // add click event to save button class to run function         
-  // $(saveBtn).on("click" , "writeToLocalStorage(){
+    //     (this is to save a value from the text area to local storage, using the hour as the key when save button is clicked)
+
+// add click event to save button class to run function         
+// $(saveBtn).on("click" , "writeToLocalStorage(){
 
     //             - read text from text area (class = "description", should be parent of save button)
     //             - read schedule hour
     //             - trim text, trim schedule hour
     //             - send to local storage
   // });
-  //       
+   
     
   //   }
 
