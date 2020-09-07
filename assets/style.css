@@ -42,26 +42,27 @@ textarea{
 }
 
 .past {
-  background-color: #6f1fb6;
+  background-color: #9d48e8;
   color: white;
 }
 
 .present {
-  background-color: #8a5ddfef;
+  background-color: #ec77d9;
   color: white;
 }
 
 .future {
-  background-color: #bc94fce9;
+  background-color: #aea0fff1;
   color: white;
 }
 
 .saveBtn {
   border: 2px solid black;
   border-radius: 15px;
-  background-color: #eb5ff8;
+  background-color: #6688f7;
   color: white;
 }
+
 
 .saveBtn i:hover {
   font-size: 20px;
