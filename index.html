@@ -25,7 +25,7 @@
     </header>
     <div class="container">
         <!-- Timeblocks go here -->
-        <div id="hour9" class="row time-block past">
+        <div id="hour9" class="row time-block">
             <div class="col-md-1 hour">
                 9:00am
             </div>
@@ -34,7 +34,7 @@
             <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
 
-        <div id="hour10" class="row time-block present"> 
+        <div id="hour10" class="row time-block"> 
             <!-- == $0 -->
             <div class="col-md-1 hour">
                 10:00am
@@ -44,7 +44,7 @@
             <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
 
-        <div id="hour11" class="row time-block future">
+        <div id="hour11" class="row time-block">
             <div class="col-md-1 hour">
                 11:00am
             </div>
@@ -53,7 +53,7 @@
             <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
 
-        <div id="hour12" class="row time-block future">
+        <div id="hour12" class="row time-block">
             <div class="col-md-1 hour">
                 12:00pm
             </div>
@@ -62,7 +62,7 @@
             <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
 
-        <div id="hour13" class="row time-block future">
+        <div id="hour13" class="row time-block">
             <div class="col-md-1 hour">
                 1:00pm
             </div>
@@ -71,7 +71,7 @@
             <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
 
-        <div id="hour14" class="row time-block future">
+        <div id="hour14" class="row time-block">
             <div class="col-md-1 hour">
                 2:00pm
             </div>
@@ -80,7 +80,7 @@
             <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
 
-        <div id="hour15" class="row time-block future">
+        <div id="hour15" class="row time-block">
             <div class="col-md-1 hour">
                 3:00pm
             </div>
@@ -89,7 +89,7 @@
             <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
 
-        <div id="hour16" class="row time-block future">
+        <div id="hour16" class="row time-block">
             <div class="col-md-1 hour">
                 4:00pm
             </div>
@@ -98,7 +98,7 @@
             <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
 
-        <div id="hour17" class="row time-block future">
+        <div id="hour17" class="row time-block">
             <div class="col-md-1 hour">
                 5:00pm
             </div>
@@ -156,22 +156,150 @@ setInterval(update, 1000);
 
     //             - check current hour vs time slot (to determine color of text area)
     //             - assign proper class (.past .present .future) based on comparison to current hour (<,>, === or <=, >=, ===)
-                    if (hours[i] === currentHour) {
-                    $("#hour9, #hour10, #hour11, #hour12, #hour13, #hour14, #hour15, #hour16, #hour17")
+                    if (hours[0] == currentHour) {
+                    $("#hour9")
                     .addClass("present")
-                    .removeClass("future past");
-                    
-                    }
-                    else if (hours[i] < currentHour) {
-                    $("#hour9, #hour10, #hour11, #hour12, #hour13, #hour14, #hour15, #hour16, #hour17")
+                    .removeClass ("future past")    
+                    }   
+                    else if (hours[0] < currentHour) {
+                    $("#hour9")
                     .addClass("past")
-                    .removeClass("future present");
+                    .removeClass("future present")
                     }
-                    else if (hours[i] > currentHour) {
-                    $("#hour9, #hour10, #hour11, #hour12, #hour13, #hour14, #hour15, #hour16, #hour17")
+                    else if (hours[0] > currentHour) {
+                    $("#hour9")                    
                     .addClass("future")
                     .removeClass("present past");
+                    };
+                    
+                    if (hours[1] == currentHour) {
+                    $("#hour10")
+                    .addClass("present")
+                    .removeClass ("future past")    
+                    }   
+                    else if (hours[1] < currentHour) {
+                    $("#hour10")
+                    .addClass("past")
+                    .removeClass("future present")
                     }
+                    else if (hours[1] > currentHour) {
+                    $("#hour10")                    
+                    .addClass("future")
+                    .removeClass("present past");
+                    };
+
+                    if (hours[2] == currentHour) {
+                    $("#hour11")
+                    .addClass("present")
+                    .removeClass ("future past")    
+                    }   
+                    else if (hours[2] < currentHour) {
+                    $("#hour11")
+                    .addClass("past")
+                    .removeClass("future present")
+                    }
+                    else if (hours[2] > currentHour) {
+                    $("#hour11")                    
+                    .addClass("future")
+                    .removeClass("present past")
+                    };
+
+                    if (hours[3] == currentHour) {
+                    $("#hour12")
+                    .addClass("present")
+                    .removeClass ("future past")    
+                    }   
+                    else if (hours[3] < currentHour) {
+                    $("#hour12")
+                    .addClass("past")
+                    .removeClass("future present")
+                    }
+                    else if (hours[3] > currentHour) {
+                    $("#hour12")                    
+                    .addClass("future")
+                    .removeClass("present past");
+                    };
+
+                    if (hours[4] == currentHour) {
+                    $("#hour13")
+                    .addClass("present")
+                    .removeClass ("future past")    
+                    }   
+                    else if (hours[4] < currentHour) {
+                    $("#hour13")
+                    .addClass("past")
+                    .removeClass("future present")
+                    }
+                    else if (hours[4] > currentHour) {
+                    $("#hour13")                    
+                    .addClass("future")
+                    .removeClass("present past");
+                    };
+
+                    if (hours[5] == currentHour) {
+                    $("#hour14")
+                    .addClass("present")
+                    .removeClass ("future past")    
+                    }   
+                    else if (hours[5] < currentHour) {
+                    $("#hour14")
+                    .addClass("past")
+                    .removeClass("future present")
+                    }
+                    else if (hours[5] > currentHour) {
+                    $("#hour14")                    
+                    .addClass("future")
+                    .removeClass("present past");
+                    };
+
+                    if (hours[6] == currentHour) {
+                    $("#hour15")
+                    .addClass("present")
+                    .removeClass ("future past")    
+                    }   
+                    else if (hours[6] < currentHour) {
+                    $("#hour15")
+                    .addClass("past")
+                    .removeClass("future present")
+                    }
+                    else if (hours[6] > currentHour) {
+                    $("#hour15")                    
+                    .addClass("future")
+                    .removeClass("present past");
+                    };
+
+                    if (hours[7] == currentHour) {
+                    $("#hour16")
+                    .addClass("present")
+                    .removeClass ("future past")    
+                    }   
+                    else if (hours[7] < currentHour) {
+                    $("#hour16")
+                    .addClass("past")
+                    .removeClass("future present")
+                    }
+                    else if (hours[7] > currentHour) {
+                    $("#hour16")                    
+                    .addClass("future")
+                    .removeClass("present past");
+                    };
+
+                    if (hours[8] == currentHour) {
+                    $("#hour17")
+                    .addClass("present")
+                    .removeClass ("future past")    
+                    }   
+                    else if (hours[8] < currentHour) {
+                    $("#hour17")
+                    .addClass("past")
+                    .removeClass("future present")
+                    }
+                    else if (hours[8] > currentHour) {
+                    $("#hour17")                    
+                    .addClass("future")
+                    .removeClass("present past")
+                    }
+                    
             
                 console.log(hours[i], currentHour)
     }
