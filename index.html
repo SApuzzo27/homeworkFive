@@ -114,9 +114,15 @@
 <script>
 
 // vars
-// var saveBtn  = document.querySelector("#saveBtn")
-// var value    = document.querySelector(".description")
-// var time     = document.querySelector(".hour") 
+
+var saveBtn = document.querySelector("#saveBtn");
+var hours = ["9", "10", "11", "12", "13", "14", "15", "16", "17" ]
+var  text = "";
+// var value = document.querySelector(".description")
+// var myStorage = window.localStorage;
+// var aValue = storage.getItem(keyName);
+var currentHour = moment().hour();
+// var i ;
 
 // // vars for each hour 
 // var t9 =   localStorage.getItem("9am");
@@ -129,15 +135,6 @@
 // var t16 =  localStorage.getItem("4pm");
 // var t17 =  localStorage.getItem("5pm");
 
-var saveBtn = document.querySelector("#saveBtn");
-var hours = ["9", "10", "11", "12", "13", "14", "15", "16", "17" ]
-var  text = "";
-// var myStorage = window.localStorage;
-// var aValue = storage.getItem(keyName);
-var currentHour = moment().hour();
-// var i ;
-
-
 
 // add current day and date with moments to #currentDay
 var update = function() {
@@ -145,20 +142,20 @@ document.querySelector("#currentDay").innerHTML = moment().format('LLLL');
 }
 setInterval(update, 1000);
 
+
 // function readFromLocalStorage ()
     //   (this is to look for anything saved previously in local storage)
 
 // document.querySelector(".description").innerHTML = localStorage.getItem("")
     //         use for loop
-    for(i = 0; i < hours.length; i++)
-    {
+    for(i = 0; i < hours.length; i++) {
     //             - read value from time property
 
     //             - assign as text back in element (using its class (.description) and id (specific to each hour)
     //                 document.querySelector(".description").innerHTML = text;
 
     //             - check current hour vs time slot (to determine color of text area)
-    //                 - assign proper class (.past .present .future) based on comparison to current hour (<,>, === or <=, >=, ===)
+    //             - assign proper class (.past .present .future) based on comparison to current hour (<,>, === or <=, >=, ===)
                     if (hours[i] === currentHour) {
                     $("#hour9, #hour10, #hour11, #hour12, #hour13, #hour14, #hour15, #hour16, #hour17")
                     .addClass("present")
@@ -179,7 +176,7 @@ setInterval(update, 1000);
                 console.log(hours[i], currentHour)
     }
 
-    //    function writeToLocalStorage () {
+//    function writeToLocalStorage () {
 //(this is to save a value from the text area to local storage, using the hour as the key when save button is clicked)
  // add click event to save button class to run function         
 
