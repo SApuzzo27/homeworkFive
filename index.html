@@ -34,7 +34,8 @@
             <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
 
-        <div id="hour10" class="row time-block past">
+        <div id="hour10" class="row time-block present"> 
+            <!-- == $0 -->
             <div class="col-md-1 hour">
                 10:00am
             </div>
@@ -43,7 +44,7 @@
             <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
 
-        <div id="hour11" class="row time-block past">
+        <div id="hour11" class="row time-block future">
             <div class="col-md-1 hour">
                 11:00am
             </div>
@@ -52,7 +53,7 @@
             <button class="btn saveBtn col-md-1"><i class="fas fa-save"></i></button>
         </div>
 
-        <div id="hour12" class="row time-block present">
+        <div id="hour12" class="row time-block future">
             <div class="col-md-1 hour">
                 12:00pm
             </div>
@@ -113,42 +114,91 @@
 <script>
 
 // vars
-// var 
-// var saveBtn = document.querySelector("#saveBtn")
+// var saveBtn  = document.querySelector("#saveBtn")
+// var value    = document.querySelector(".description")
+// var time     = document.querySelector(".hour") 
+
+// // vars for each hour 
+// var t9 =   localStorage.getItem("9am");
+// var t10 =  localStorage.getItem("10am");
+// var t11 =  localStorage.getItem("11am");
+// var t12 =  localStorage.getItem("12pm");
+// var t13 =  localStorage.getItem("1pm");
+// var t14 =  localStorage.getItem("2pm");
+// var t15 =  localStorage.getItem("3pm");
+// var t16 =  localStorage.getItem("4pm");
+// var t17 =  localStorage.getItem("5pm");
+
+var saveBtn = document.querySelector("#saveBtn");
+var hours = ["9", "10", "11", "12", "13", "14", "15", "16", "17" ]
+var  text = "";
+// var myStorage = window.localStorage;
+// var aValue = storage.getItem(keyName);
+var currentHour = moment().hour();
+// var i ;
 
 
 
 // add current day and date with moments to #currentDay
-$("#currentDay").text(moment().format('MMMM Do YYYY, h:mm:ss a'));  
-console.log(document)
+var update = function() {
+document.querySelector("#currentDay").innerHTML = moment().format('LLLL');
+}
+setInterval(update, 1000);
 
 // function readFromLocalStorage ()
-    //    (this is to look for anything saved previously in local storage)
+    //   (this is to look for anything saved previously in local storage)
+
+// document.querySelector(".description").innerHTML = localStorage.getItem("")
     //         use for loop
+    for(i = 0; i < hours.length; i++)
+    {
     //             - read value from time property
+
     //             - assign as text back in element (using its class (.description) and id (specific to each hour)
-    //             - check current hour vs time slot (to determine color of text area: gray, red or white)
+    //                 document.querySelector(".description").innerHTML = text;
+
+    //             - check current hour vs time slot (to determine color of text area)
     //                 - assign proper class (.past .present .future) based on comparison to current hour (<,>, === or <=, >=, ===)
+                    if (hours[i] === currentHour) {
+                    $("#hour9, #hour10, #hour11, #hour12, #hour13, #hour14, #hour15, #hour16, #hour17")
+                    .addClass("present")
+                    .removeClass("future past");
+                    
+                    }
+                    else if (hours[i] < currentHour) {
+                    $("#hour9, #hour10, #hour11, #hour12, #hour13, #hour14, #hour15, #hour16, #hour17")
+                    .addClass("past")
+                    .removeClass("future present");
+                    }
+                    else if (hours[i] > currentHour) {
+                    $("#hour9, #hour10, #hour11, #hour12, #hour13, #hour14, #hour15, #hour16, #hour17")
+                    .addClass("future")
+                    .removeClass("present past");
+                    }
+            
+                console.log(hours[i], currentHour)
+    }
 
-    //     function writeToLocalStorage () {
-    //     (this is to save a value from the text area to local storage, using the hour as the key when save button is clicked)
+    //    function writeToLocalStorage () {
+//(this is to save a value from the text area to local storage, using the hour as the key when save button is clicked)
+ // add click event to save button class to run function         
 
-// add click event to save button class to run function         
-// $(saveBtn).on("click" , "writeToLocalStorage(){
 
-    //             - read text from text area (class = "description", should be parent of save button)
-    //             - read schedule hour
-    //             - trim text, trim schedule hour
-    //             - send to local storage
-  // });
-   
+// $(saveBtn).on("click" , "writeToLocalStorage() {
+
+// //     //             - read text from text area (class = "description", should be parent of save button)
+//                         myStorage.getItem(".description")
+// //     //             - read schedule hour
+//                         .getHour()
+// //     //             - trim text, trim schedule hour
+//                         .trim()
+// //     //             - send to local storage
+//                         myStorage.setItem(".description")
+//   });      
     
-  //   }
+//     }
 
 // call readFromLocalStorage(); 
-
-
-
 
 
 
