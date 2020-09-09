@@ -177,7 +177,7 @@ $(document).ready(function () {
     };
     
     // add click event to save button class to run function
-    $(".saveBtn").on("click", function writeToLocalStorage(event) {
+    $(".saveBtn").on("click", function writeToLocalStorage() {
         //(this is to save a value from the text area to local storage, using the hour as the key when save button is clicked)
         var textIn = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
