@@ -192,7 +192,10 @@ setInterval(update, 1000);
         localStorage.clear();
         location.reload()
     });
-
-readFromLocalStorage();
-
+    
+    readFromLocalStorage();
 });
+
+
+
+
