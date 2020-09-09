@@ -68,3 +68,21 @@ textarea{
   font-size: 20px;
   transition: all .3s ease-in-out;
 }
+
+.clearBtn {
+  float: center;
+  border-radius: 10px;
+  background-color: #6688f7;
+  color: white;
+  opacity: 1;
+  font-size: 25px;
+  padding: 5px;
+  margin: auto;
+  display: block;
+}
+
+.clearBtn:Hover {
+  font-size: 30px;
+  opacity: 0.6;
+  transition: all .3s ease-in-out;
+}
