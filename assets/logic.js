@@ -187,10 +187,19 @@ setInterval(update, 1000);
         alert("You're Appointment has been Saved!")
     }); 
 
+var confirmCancel;
+
     //add button to clear local storage and refresh the page
     $("#clear").click(function () {
-        localStorage.clear();
+        confirmCancel = confirm("Taking the day? If so hit Ok to cancel all appointments");
+        if (confirmCancel) {
+        alert("Treat Yo Self!")
+        localStorage.clear()
         location.reload()
+        }
+        else {
+        alert("YOURE A HUSTLER BABY!")
+        }
     });
     
     readFromLocalStorage();
