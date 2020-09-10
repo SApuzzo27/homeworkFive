@@ -3,7 +3,7 @@ $(document).ready(function () {
     // vars
 var hours = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
 var currentHour = moment().hour();
-var saveBtn = document.querySelector(".saveBtn")
+// var saveBtn = document.querySelector(".saveBtn") ---> did not need ..doesnt work for multi lines 
 
 // add current day and date with moments to #currentDay
 var update = function () {
@@ -30,7 +30,7 @@ setInterval(update, 1000);
         for (i = 0; i < hours.length; i++) {
             // check current hour vs time slot (to determine color of text area)
             // assign proper class (.past .present .future) based on comparison to current hour (<,>, === or <=, >=, ===)
-            if (hours[0] == currentHour) {
+            if (hours[0] == currentHour){
                 $("#hour9")
                     .addClass("present")
                     .removeClass("future past")
@@ -173,13 +173,13 @@ setInterval(update, 1000);
                     .addClass("future")
                     .removeClass("present past")
             }
-
+            setInterval(update, 1000);
             console.log(hours[i], currentHour)
         };
     };
     
     // add click event to save button class to run function
-    $(saveBtn).click(function writeToLocalStorage() {
+    $(".saveBtn").click(function writeToLocalStorage() {
         //(this is to save a value from the text area to local storage, using the hour as the key when save button is clicked)
         var textIn = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
