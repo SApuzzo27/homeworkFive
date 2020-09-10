@@ -3,7 +3,7 @@ $(document).ready(function () {
     // vars
 var hours = ["9", "10", "11", "12", "13", "14", "15", "16", "17"]
 var currentHour = moment().hour();
-var saveBtn = document.querySelector("#saveBtn")
+var saveBtn = document.querySelector(".saveBtn")
 
 // add current day and date with moments to #currentDay
 var update = function () {
@@ -179,7 +179,7 @@ setInterval(update, 1000);
     };
     
     // add click event to save button class to run function
-    $(".saveBtn").click(function writeToLocalStorage() {
+    $(saveBtn).click(function writeToLocalStorage() {
         //(this is to save a value from the text area to local storage, using the hour as the key when save button is clicked)
         var textIn = $(this).siblings(".description").val();
         var time = $(this).parent().attr("id");
